@@ -23,19 +23,18 @@ Se preferir, você pode clonar o repositório e instalar manualmente:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/lucasliet/gitlab-mr-diff.git
-    ```
+git clone https://github.com/lucasliet/gitlab-mr-diff.git
+```
 
 2.  **Navegue até o diretório:**
     ```bash
-    cd gitlab-mr-diff
-    ```
+cd gitlab-mr-diff
+```
 
 3.  **Instale com `pipx`:**
     ```bash
-    pipx install .
-    ```
-
+pipx install .
+```
 
 ## Configuração
 
@@ -43,13 +42,13 @@ Antes de usar, você precisa configurar as seguintes variáveis de ambiente:
 
 -   `GITLAB_PRODESP_TOKEN`: Seu Token de Acesso Pessoal do GitLab.
     ```bash
-    export GITLAB_PRODESP_TOKEN='seu_token_privado_aqui'
-    ```
+export GITLAB_PRODESP_TOKEN='seu_token_privado_aqui'
+```
 
 -   `GITLAB_PROJECT_PREFIX` (Opcional): O prefixo do projeto no GitLab. O padrão é `ssp/dipol/`.
     ```bash
-    export GITLAB_PROJECT_PREFIX='meu/grupo/'
-    ```
+export GITLAB_PROJECT_PREFIX='meu/grupo/'
+```
 
 ## Como Usar
 
@@ -69,4 +68,11 @@ get_mr_diff <caminho_parcial_projeto> <mr_iid>
 ```bash
 get_mr_diff frontend/dipol-de 640
 ```
-# gitlab-mr-diff
+
+## Desinstalação
+
+Se você deseja desinstalar a ferramenta, pode usar o seguinte comando:
+
+```bash
+pipx uninstall gitlab-mr-diff
+```
