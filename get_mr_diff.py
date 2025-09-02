@@ -3,16 +3,19 @@
 Script para buscar os diffs de um Merge Request do GitLab e formatá-los.
 
 COMO USAR:
-1. Salve este script como 'get_mr_diff.py'.
-2. Instale a biblioteca 'requests':
-   pip install requests
-3. Exporte seu Token de Acesso Pessoal do GitLab como uma variável de ambiente:
-   export GITLAB_PRIVATE_TOKEN='seu_token_aqui'
-4. Execute o script passando o caminho parcial do projeto e o IID do Merge Request:
-   python get_mr_diff.py <caminho_parcial_projeto> <mr_iid>
+1. Instale a ferramenta usando o install.sh ou pipx:
+   curl -sSL https://raw.githubusercontent.com/lucasliet/gitlab-mr-diff/main/install.sh | bash
+   # ou
+   pipx install .
+2. Exporte seu Token de Acesso Pessoal do GitLab como uma variável de ambiente:
+   export GITLAB_PRODESP_TOKEN='seu_token_aqui'
+3. (Opcional) Exporte o prefixo do projeto:
+   export GITLAB_PROJECT_PREFIX='meu/grupo/'
+4. Execute o comando passando o caminho parcial do projeto e o IID do Merge Request:
+   get_mr_diff <caminho_parcial_projeto> <mr_iid>
 
 EXEMPLO:
-   python get_mr_diff.py frontend/dipol-de 634
+   get_mr_diff frontend/dipol-de 640
 '''
 import os
 import sys
@@ -78,8 +81,9 @@ def format_as_git_diff(diffs):
 def main():
     """Função principal do script."""
     if len(sys.argv) != 3:
-        print(f"Uso: python {sys.argv[0]} <caminho_parcial_projeto> <mr_iid>", file=sys.stderr)
-        print(f"Exemplo: python {sys.argv[0]} frontend/dipol-de 634", file=sys.stderr)
+        script_name = os.path.basename(sys.argv[0])
+        print(f"Uso: {script_name} <caminho_parcial_projeto> <mr_iid>", file=sys.stderr)
+        print(f"Exemplo: {script_name} frontend/dipol-de 640", file=sys.stderr)
         sys.exit(1)
 
     partial_project_path = sys.argv[1]
