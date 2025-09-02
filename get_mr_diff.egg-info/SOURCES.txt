@@ -1,0 +1,8 @@
+get_mr_diff.py
+pyproject.toml
+get_mr_diff.egg-info/PKG-INFO
+get_mr_diff.egg-info/SOURCES.txt
+get_mr_diff.egg-info/dependency_links.txt
+get_mr_diff.egg-info/entry_points.txt
+get_mr_diff.egg-info/requires.txt
+get_mr_diff.egg-info/top_level.txt

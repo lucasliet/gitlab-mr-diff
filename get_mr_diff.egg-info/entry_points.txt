@@ -1,0 +1,2 @@
+[console_scripts]
+get_mr_diff = get_mr_diff:main

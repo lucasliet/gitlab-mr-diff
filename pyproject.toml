@@ -1,0 +1,9 @@
+[project]
+name = "get_mr_diff"
+version = "0.1.0"
+dependencies = [
+    "requests",
+]
+
+[project.scripts]
+get_mr_diff = "get_mr_diff:main"
